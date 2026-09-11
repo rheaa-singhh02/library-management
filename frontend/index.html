@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Library Management System</h1>
+
+    <div class="container">
+
+        <button onclick="showDashboard()">Dashboard</button>
+        <button onclick="showAddBook()">Add Book</button>
+        <button onclick="showBooks()">View Books</button>
+        <button onclick="showScanner()">Scan QR</button>
+        <button onclick="showSearch()">Search Books</button>
+        <button onclick="showIssue()">Issue Book</button>
+        <button onclick="showReturn()">Return Book</button>
+        <button onclick="showTransactions()">Transactions</button>
+        <button onclick="exportTransactions()">Export CSV</button>
+
+        <div id="content">
+            <h2>Welcome!</h2>
+            <p>Select an option above.</p>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
