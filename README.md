@@ -1,4 +1,4 @@
-# 📚 Library Book Issue & Return Management System
+# Library Book Issue & Return Management System
 
 ## 1. Project Overview
 
@@ -10,9 +10,9 @@ The frontend communicates with a Node.js and Express.js backend through REST API
 
 ---
 
-# 2. Features Implemented
+## 2. Features Implemented
 
-## 📚 Book Management
+### Book Management
 
 - Add a new book
 - View all books
@@ -23,7 +23,7 @@ The frontend communicates with a Node.js and Express.js backend through REST API
 - Maintain currently available copies
 - Use a unique Book ID for each book
 
-## 📕 Book Issue
+### Book Issue
 
 - Issue a book using its Book ID
 - Store borrower name
@@ -32,15 +32,15 @@ The frontend communicates with a Node.js and Express.js backend through REST API
 - Decrease available copies after issuing
 - Prevent issuing when no copies are available
 
-## ↩️ Book Return
+### Book Return
 
 - Return a book using its Book ID
 - Find the currently active transaction
 - Automatically record return date
-- Change transaction status to `Returned`
+- Change transaction status to Returned
 - Increase available copies
 
-## 📊 Dashboard
+### Dashboard
 
 The dashboard displays:
 
@@ -49,21 +49,21 @@ The dashboard displays:
 - Issued books
 - Overdue books
 
-## 🔍 Search
+### Search
 
 Books can be searched using:
 
 - Book title
 - Author name
 
-## 📱 QR Code Features
+### QR Code Features
 
 - Generate a QR code for each book
 - QR code contains the unique Book ID
 - Scan a book QR code using the device camera
 - Display the Book ID obtained from the scan
 
-## 📋 Transaction History
+### Transaction History
 
 The system stores and displays:
 
@@ -75,16 +75,16 @@ The system stores and displays:
 - Return date
 - Current status
 
-## ⚠️ Overdue Detection
+### Overdue Detection
 
 A transaction is considered overdue when:
 
-- Its status is `Issued`
+- Its status is Issued
 - Its due date has passed
 
 Overdue books are displayed on the dashboard and marked in the transaction history.
 
-## 📥 CSV Export
+### CSV Export
 
 Transaction records can be exported as a CSV file containing:
 
@@ -95,7 +95,7 @@ Transaction records can be exported as a CSV file containing:
 - Return Timestamp
 - Current Status
 
-## ✅ Input Validation
+### Input Validation
 
 The frontend checks required fields before sending requests.
 
@@ -108,7 +108,7 @@ Examples:
 
 ---
 
-# 3. Additional Features Added
+## 3. Additional Features Added
 
 In addition to the basic book issue and return functionality, the following features were implemented:
 
@@ -121,20 +121,20 @@ In addition to the basic book issue and return functionality, the following feat
 7. CSV transaction export
 8. Frontend input validation
 9. User-friendly error messages
-10. Responsive and clean frontend styling
+10. Clean and responsive frontend styling
 
 ---
 
-# 4. Technologies Used
+## 4. Technologies Used
 
-## Frontend
+### Frontend
 
 - HTML5
 - CSS3
 - JavaScript
 - HTML5 QR Code library
 
-## Backend
+### Backend
 
 - Node.js
 - Express.js
@@ -144,11 +144,11 @@ In addition to the basic book issue and return functionality, the following feat
 - QRCode
 - json2csv
 
-## Database
+### Database
 
 - MongoDB Atlas
 
-## Development Tools
+### Development Tools
 
 - Visual Studio Code
 - Thunder Client
@@ -157,7 +157,7 @@ In addition to the basic book issue and return functionality, the following feat
 
 ---
 
-# 5. Project Architecture
+## 5. Project Architecture
 
 The project follows a simple client-server architecture.
 
@@ -166,17 +166,18 @@ The project follows a simple client-server architecture.
                HTML + CSS + JavaScript
                          |
                          | HTTP Requests
-                         ▼
+                         v
                     EXPRESS API
                          |
-              ┌──────────┴──────────┐
-              │                     │
-              ▼                     ▼
+              +----------+----------+
+              |                     |
+              v                     v
         Book Routes          Transaction Routes
-              │                     │
-              └──────────┬──────────┘
-                         ▼
+              |                     |
+              +----------+----------+
+                         |
+                         v
                      MONGOOSE
                          |
-                         ▼
+                         v
                    MONGODB ATLAS
